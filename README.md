@@ -1,21 +1,47 @@
 # SimpleQueue
 
-**TODO: Add description**
+Repository for the eighteen challenge of the Elixir's path from [Rocketseat Ignite](https://rocketseat.com.br).
 
-## Installation
+## :rocket: Techs
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `simple_queue` to your list of dependencies in `mix.exs`:
+* [Elixir](https://elixir-lang.org/)
+
+## :wrench: Setup
+
+  * Install dependencies with `mix deps.get`
+  * For interactive testing use `iex -S mix`
+
+## :white_check_mark: Test
+
+To run tests:
+
+* Run with `mix test --cover`
+
+## :man_technologist: Usage
+
+### Start queue
 
 ```elixir
-def deps do
-  [
-    {:simple_queue, "~> 0.1.0"}
-  ]
-end
+{:ok, pid} = SimpleQueue.start_link([])
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/simple_queue](https://hexdocs.pm/simple_queue).
+### Enqueue an element
+
+```elixir
+SimpleQueue.enqueue(pid, 1)
+# :ok
+```
+
+### Dequeue
+
+```elixir
+SimpleQueue.dequeue(pid)
+# 1
+```
+
+## :page_facing_up: License
+
+* [MIT](/LICENSE.txt)
+
+
 
